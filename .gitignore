@@ -1,0 +1,41 @@
+# Python bytecode and caches
+__pycache__/
+*.py[cod]
+*.pyd
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Editor and OS files
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
+
+# Generated images and test artifacts
+test_images/
+baseline_test_result.png
+cpu_test_result.png
+viton_hd_result.png
+viton_hd_fixed_result.png
+viton_hd_final_result.png
+*.log
+
+# Large model repositories and checkpoints
+models/cp-vton/
+models/viton-hd/
+weights/*.pth
+weights/**/*.pth
+
+# Large uploaded source material and report exports
+Executive Summary*.pdf
+Executive Summary*.txt
+
+# Keep the small repo examples tracked
+!models/cp-vton.inference_api.example.py
+!models/viton-hd.inference_api.example.py

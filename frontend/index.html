@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AvatarFit | Personalized Virtual Try-On</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Playfair+Display:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/assets/styles.css" />
+  </head>
+  <body>
+    <div class="bg-glow bg-glow-a"></div>
+    <div class="bg-glow bg-glow-b"></div>
+
+    <main class="container">
+      <section class="hero">
+        <p class="eyebrow">DW & DM Project</p>
+        <h1>Personalized Avatar-Based Fitting</h1>
+        <p>
+          Upload a person photo and a garment image. The try-on engine composes a quick virtual preview
+          so you can evaluate fit and style before purchase.
+        </p>
+      </section>
+
+      <section class="panel">
+        <form id="tryon-form" class="uploader-grid">
+          <label class="uploader-card">
+            <span>Person Image</span>
+            <input id="person" name="person" type="file" accept="image/png,image/jpeg,image/webp" required />
+            <img id="person-preview" class="preview" alt="Person preview" />
+          </label>
+
+          <label class="uploader-card">
+            <span>Cloth Image</span>
+            <input id="cloth" name="cloth" type="file" accept="image/png,image/jpeg,image/webp" required />
+            <img id="cloth-preview" class="preview" alt="Cloth preview" />
+          </label>
+        </form>
+
+        <div class="actions">
+          <button id="tryon-btn" type="button">Try On</button>
+          <p id="status" aria-live="polite"></p>
+        </div>
+      </section>
+
+      <section class="results">
+        <article class="result-card">
+          <h2>Result</h2>
+          <img id="result-image" alt="Virtual try-on result" />
+          <a id="download-link" download="tryon-result.png">Download Result</a>
+        </article>
+      </section>
+    </main>
+
+    <script src="/assets/app.js" defer></script>
+  </body>
+</html>

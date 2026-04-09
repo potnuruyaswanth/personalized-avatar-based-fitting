@@ -1,0 +1,46 @@
+active_backend: baseline
+allow_fallback_to_baseline: true
+
+backends:
+  cp_vton:
+    enabled: false
+    repo_dir: models/cp-vton
+    checkpoint_path: weights/cp_vton_tom.pth
+    python_executable: ""
+    output_filename: cp_vton_result.png
+    placeholders:
+      gmm_checkpoint: weights/cp_vton_gmm.pth
+      tom_checkpoint: weights/cp_vton_tom.pth
+    inference_command:
+      - "{python}"
+      - "inference_api.py"
+      - "--person"
+      - "{person}"
+      - "--cloth"
+      - "{cloth}"
+      - "--gmm-checkpoint"
+      - "{gmm_checkpoint}"
+      - "--tom-checkpoint"
+      - "{tom_checkpoint}"
+      - "--output"
+      - "{output}"
+
+  viton_hd:
+    enabled: true
+    repo_dir: models/viton-hd
+    checkpoint_path: weights/viton_hd/alias_final.pth
+    python_executable: ""
+    output_filename: viton_hd_result.png
+    placeholders:
+      checkpoint_dir: weights/viton_hd
+    inference_command:
+      - "{python}"
+      - "inference_api.py"
+      - "--person"
+      - "{person}"
+      - "--cloth"
+      - "{cloth}"
+      - "--checkpoint-dir"
+      - "{checkpoint_dir}"
+      - "--output"
+      - "{output}"
